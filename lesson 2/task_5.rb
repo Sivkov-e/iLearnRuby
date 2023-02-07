@@ -12,19 +12,18 @@ month = gets.to_i
 puts "Введите год"
 year = gets.to_i
 
-
-if (year % 400 ==0 || (year % 4 == 0 && year % 100 != 0))  
-    months[2] = 29
+if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))  
+  months[2] = 29
 end
 
 sum = 0
 if month ==1
-    sum = day
+  sum = day
 else
-    all_months = months.values_at(*months.keys.first(month - 1))
-    all_months.each do |value|
-        sum += value
-    end
-    sum += day
+  all_months = months.values_at(*months.keys.first(month - 1))
+  all_months.each do |value|
+    sum += value
+  end
+  sum += day
 end
 # puts sum
